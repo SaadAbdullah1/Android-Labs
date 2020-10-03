@@ -2,5 +2,10 @@
 <resources>
     <string name="app_name">Android Labs</string>
     <string name="hello_message">Assalam-alaykum</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonText">Ye Aik Chees Hai</string>
+    <string name="CheckBoxText">Is ko dheko!</string>
+    <string name="SwitchText">Switch on/off</string>
+    <string name="EditHint">Yahaan Likho</string>
+    <string name="toast_message">Yahaan zaada maamlat hain</string>
+    <string name="todo">TODO</string>
 </resources>
