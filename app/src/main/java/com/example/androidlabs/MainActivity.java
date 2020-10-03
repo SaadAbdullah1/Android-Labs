@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_linear);
+        setContentView(R.layout.activity_main_grid);
 
-        Button btn = findViewById(R.id.button2); //CHANGE THIS EVERY COMMIT FOR EACH LAYOUT
+        Button btn = findViewById(R.id.button3); //CHANGE THIS EVERY COMMIT FOR EACH LAYOUT
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Switch swt = findViewById(R.id.switch1); //CHANGE THIS EVERY COMMIT FOR EACH LAYOUT
+        Switch swt = findViewById(R.id.switch2); //CHANGE THIS EVERY COMMIT FOR EACH LAYOUT
         swt.setOnClickListener((v) -> swt.setChecked(false));
         swt.setOnCheckedChangeListener((whatClicked, newState) -> {
             if(!newState){
