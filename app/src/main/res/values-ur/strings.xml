@@ -7,5 +7,9 @@
     <string name="SwitchText">Switch on/off</string>
     <string name="EditHint">Yahaan Likho</string>
     <string name="toast_message">Yahaan zaada maamlat hain</string>
+    <string name="enter_email">Upna email address dakhil karain:</string>
+    <string name="EmailHint">Email yahaan likhain</string>
+    <string name="enter_password">Upna password yahaan likhain:</string>
+    <string name="Profile_text">Aap ka profile</string>
     <string name="todo">TODO</string>
 </resources>

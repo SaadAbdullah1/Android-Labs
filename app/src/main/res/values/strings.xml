@@ -6,5 +6,9 @@
     <string name="SwitchText">Switch on/off</string>
     <string name="EditHint">Type Here</string>
     <string name="toast_message">Here is more information</string>
+    <string name="enter_email">Enter your email address:</string>
+    <string name="EmailHint">Type email here</string>
+    <string name="enter_password">Type your password:</string>
+    <string name="Profile_text">Your profile</string>
     <string name="todo">TODO</string>
 </resources>
