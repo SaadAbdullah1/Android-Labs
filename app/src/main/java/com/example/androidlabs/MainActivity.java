@@ -17,8 +17,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText email = findViewById(R.id.editTextTextEmailAddress);
-    Button loginButton = findViewById(R.id.button5);
+    EditText email;
+    Button loginButton;
     SharedPreferences prefs = null;
 
     @Override
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile);
 
+        email = findViewById(R.id.editTextTextEmailAddress);
         prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
         String savedString = prefs.getString("ReserveName", "Default Value");
         email.setHint(savedString);
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //Creating a transition to load ProfileActivity
         Intent nextActivity = new Intent(this, ProfileActivity.class);
         //activating the button listener to start associated activity
+        loginButton = findViewById(R.id.button5);
         loginButton.setOnClickListener(click-> {
             nextActivity.putExtra("Email", email.getText().toString());
             startActivity(nextActivity);

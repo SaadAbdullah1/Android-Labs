@@ -16,7 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
-    ImageButton imageButton = findViewById(R.id.imageButton3);
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         enterText.setText(email);
 
         //create onclick attributes for image button
+        imageButton = findViewById(R.id.imageButton3);
         imageButton.setOnClickListener(click-> {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if(takePictureIntent.resolveActivity(getPackageManager())!= null){
