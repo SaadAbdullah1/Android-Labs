@@ -10,5 +10,11 @@
     <string name="EmailHint">Type email here</string>
     <string name="enter_password">Type your password:</string>
     <string name="Profile_text">Your profile</string>
+    <string name="Name_hint">Enter your name</string>
+    <string name="Name_text">Your name:</string>
+    <string name="Email_text">Your email:</string>
+    <string name="Picture_text">Your picture:</string>
+    <string name="EmailHint2">Enter your email</string>
+    <string name="ClickButtonText">Click the button above to take a picture</string>
     <string name="todo">TODO</string>
 </resources>

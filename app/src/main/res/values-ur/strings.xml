@@ -11,5 +11,11 @@
     <string name="EmailHint">Email yahaan likhain</string>
     <string name="enter_password">Upna password yahaan likhain:</string>
     <string name="Profile_text">Aap ka profile</string>
+    <string name="Name_hint">Naam likhain</string>
+    <string name="Name_text">Aap ka naam:</string>
+    <string name="Email_text">Aap ki email:</string>
+    <string name="Picture_text">Aap ki tasveer:</string>
+    <string name="EmailHint2">Email likhain</string>
+    <string name="ClickButtonText">Oopar walay button ko dabaa dain tasveer laynay kay liya</string>
     <string name="todo">TODO</string>
 </resources>

@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main_profile);
 
         prefs = getSharedPreferences("FileName", Context.MODE_PRIVATE);
@@ -34,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
         //Creating a transition to load ProfileActivity
         Intent nextActivity = new Intent(this, ProfileActivity.class);
         //activating the button listener to start associated activity
-        loginButton.setOnClickListener(click-> startActivity(nextActivity));
+        loginButton.setOnClickListener(click-> {
+            nextActivity.putExtra("Email", email.getText().toString());
+            startActivity(nextActivity);
+        });
 
         }
 
@@ -46,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         //get an editor object
         SharedPreferences.Editor editor = prefs.edit();
         //save what was typed under the name "Reserve Name"
-        editor.putString(s: "ReserveName", )
+        String wasTyped = email.getText().toString();
+        editor.putString("ReserveName", wasTyped);
+
+        //write it to disk
+        editor.apply();
     }
 }
