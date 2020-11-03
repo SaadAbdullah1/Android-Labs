@@ -17,5 +17,13 @@
     <string name="Picture_text">Aap ki tasveer:</string>
     <string name="EmailHint2">Email likhain</string>
     <string name="ClickButtonText">Oopar walay button ko dabaa dain tasveer laynay kay liya</string>
+    <string name="GoToChat">Chatroom may chalain</string>
+    <string name="Sendbtn">Bhejo</string>
+    <string name="Receivebtn">Laylo</string>
+    <string name="delete">Do you want to delete this?</string>
+    <string name="row">The selected row is: </string>
+    <string name="database">The database id is: </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="todo">TODO</string>
 </resources>
