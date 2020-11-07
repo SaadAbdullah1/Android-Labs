@@ -1,24 +1,42 @@
 package com.example.androidlabs;
 
-public class Message{
+public class Message {
 
-    private String text;
-    private Type type;
+    private final Long id;
+    private final String text;
+    private final Type type;
 
-    public Message(String messageTxt, Type type){
-        this.text = messageTxt;
+    public Message(String text, Type type) {
+        this.id = null;
+        this.text = text;
         this.type = type;
     }
 
-    public String getText(){
+    public Message(Long id, String text, Type type) {
+        this.id = id;
+        this.text = text;
+        this.type = type;
+    }
+
+    public Message(Long id, Message message) {
+        this.id = id;
+        this.text = message.getText();
+        this.type = message.getType();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getText() {
         return text;
     }
 
-    public Type getType(){
+    public Type getType() {
         return type;
     }
 
-    public enum Type{
+    public enum Type {
         SENT,
         RECEIVED
     }

@@ -22,6 +22,8 @@ public class ChatRoomActivity extends AppCompatActivity {
     private List<Message> messages = new ArrayList<>(); //elements of the listview
     MyListAdapter myAdapter = new MyListAdapter();
 
+    MessageRepository messageRepository;
+
     Button sendBtn;
     Button receiveBtn;
     EditText editText;
@@ -31,6 +33,9 @@ public class ChatRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
+
+        messageRepository = new MessageRepository(this);
+        load();
 
         listView = findViewById(R.id.listView);
         listView.setAdapter(myAdapter);
@@ -59,6 +64,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                                     getString(R.string.database) + myAdapter.getItemId(position)
                     )
                     .setPositiveButton(getString(R.string.yes), (click, arg) -> {
+                        messageRepository.delete((Message) myAdapter.getItem(position));
                         messages.remove(position);
                         myAdapter.notifyDataSetChanged();
                     })
@@ -69,10 +75,17 @@ public class ChatRoomActivity extends AppCompatActivity {
             return false;
         }));
     }
+
+    //load data from the database and notify the adapter
+    private void load(){
+        messages.addAll(messageRepository.findAll());
+        myAdapter.notifyDataSetChanged();
+    }
+
     //add a new message to the messages list then notify adapter
     private void addMessage(String text, Message.Type type){
         Message message = new Message(text, type);
-        messages.add(message);
+        messages.add(messageRepository.save(message));
         myAdapter.notifyDataSetChanged();
     }
 
@@ -101,9 +114,9 @@ public class ChatRoomActivity extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
 
             if (messages.get(position).getType() == Message.Type.SENT) {
-                newView = inflater.inflate(R.layout.row_send, parent, false);
-            } else if (messages.get(position).getType() == Message.Type.RECEIVED) {
                 newView = inflater.inflate(R.layout.row_receive, parent, false);
+            } else if (messages.get(position).getType() == Message.Type.RECEIVED) {
+                newView = inflater.inflate(R.layout.row_send, parent, false);
             }
 
             TextView messageText = newView.findViewById(R.id.message);
