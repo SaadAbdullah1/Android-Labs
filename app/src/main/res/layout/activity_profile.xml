@@ -65,4 +65,11 @@
         android:backgroundTint="#EA4545"
         android:text="@string/GoToChat" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#46B4E6"
+        android:text="@string/weather" />
+
 </LinearLayout>

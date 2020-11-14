@@ -25,5 +25,6 @@
     <string name="database">The database id is: </string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="weather">Mohsum Ka Haal</string>
     <string name="todo">TODO</string>
 </resources>
