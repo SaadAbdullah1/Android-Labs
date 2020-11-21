@@ -47,7 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Intent nextActivity2 = new Intent(this, WeatherForecast.class);
         chatButton = findViewById(R.id.button7);
-        chatButton.setOnClickListener(click-> startActivity(nextActivity));
+        chatButton.setOnClickListener(click-> startActivity(nextActivity2));
 
         Log.e(ACTIVITY_NAME, "In function: onCreate()");
     }

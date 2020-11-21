@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsFragment">
+
+        <Button
+            android:id="@+id/hideButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/fragHide"/>
+        <CheckBox
+            android:id="@+id/fragmentMessageStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentMessageID"/>
+        <TextView
+            android:id="@+id/fragmentMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragMsgHere"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/fragmentMessageStatus"
+            android:layout_alignTop="@id/fragmentMessageStatus"
+            android:layout_toEndOf="@id/fragmentMessageStatus"
+            android:gravity="center"
+            android:text="@string/fragMsgSend"/>
+
+        <TextView
+            android:id="@+id/fragmentMessageID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentMessage"
+            android:text="@string/fragid" />
+
+</RelativeLayout>

@@ -25,5 +25,14 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="weather">Weather Forecast</string>
+    <string name="currtemp">Current Temperature</string>
+    <string name="mintemp">Min. Temperature</string>
+    <string name="maxtemp">Max. Temperature</string>
+    <string name="UV">UV Rating</string>
+    <string name="fragMsgHere">Message Here</string>
+    <string name="fragid">ID=</string>
+    <string name="fragMsgSend">Is a Send Message</string>
+    <string name="fragHide">HIDE</string>
     <string name="todo">TODO</string>
+
 </resources>

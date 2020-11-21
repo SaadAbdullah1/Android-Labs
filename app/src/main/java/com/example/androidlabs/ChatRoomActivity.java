@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,13 +23,14 @@ public class ChatRoomActivity extends AppCompatActivity {
 
     private List<Message> messages = new ArrayList<>(); //elements of the listview
     MyListAdapter myAdapter = new MyListAdapter();
-
+    DetailsFragment fragment;
     MessageRepository messageRepository;
 
     Button sendBtn;
     Button receiveBtn;
     EditText editText;
     ListView listView;
+    boolean isTablet = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,11 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         messageRepository = new MessageRepository(this);
         load();
+
+        //If layout id is null, device is phone, else a tablet
+        if(findViewById(R.id.flayout) == null){
+            isTablet = false;
+        }
 
         listView = findViewById(R.id.listView);
         listView.setAdapter(myAdapter);
@@ -74,6 +82,30 @@ public class ChatRoomActivity extends AppCompatActivity {
 
             return false;
         }));
+
+        listView.setOnItemClickListener((list, item, position, id) -> {
+            Bundle dataToPass = new Bundle();
+            Message message = messages.get(position);
+            dataToPass.putString("message", message.getText());
+            dataToPass.putLong("id", message.getId());
+            dataToPass.putBoolean("status", message.getType().ordinal() == 0);
+            dataToPass.putBoolean("onTablet", isTablet);
+
+            if (isTablet) {
+                fragment = new DetailsFragment();
+                fragment.setArguments(dataToPass);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.flayout, fragment)
+                        .commit();
+            } else {
+                Intent nextActivity =
+                        new Intent(ChatRoomActivity.this, EmptyActivity.class);
+                nextActivity.putExtras(dataToPass);
+                startActivity(nextActivity);
+            }
+
+        });
     }
 
     //load data from the database and notify the adapter

@@ -26,5 +26,13 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="weather">Mohsum Ka Haal</string>
+    <string name="currtemp">Abhi Ka Mohsum</string>
+    <string name="mintemp">Neechay Ka Mohsum</string>
+    <string name="maxtemp">Ooncha Ka Mohsum</string>
+    <string name="UV">UV Rating</string>
+    <string name="fragMsgHere">Message Yahaan</string>
+    <string name="fragid">ID=</string>
+    <string name="fragMsgSend">Hai Bhejne Ka Message</string>
+    <string name="fragHide">CHUPA DOH</string>
     <string name="todo">TODO</string>
 </resources>
