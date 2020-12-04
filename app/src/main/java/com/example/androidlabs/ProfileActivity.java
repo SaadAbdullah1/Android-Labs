@@ -18,7 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
     ImageButton imageButton;
-    Button chatButton;
+    Button chatButton, forecastButton, toolbarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,12 @@ public class ProfileActivity extends AppCompatActivity {
         chatButton.setOnClickListener(click-> startActivity(nextActivity));
 
         Intent nextActivity2 = new Intent(this, WeatherForecast.class);
-        chatButton = findViewById(R.id.button7);
-        chatButton.setOnClickListener(click-> startActivity(nextActivity2));
+        forecastButton = findViewById(R.id.button7);
+        forecastButton.setOnClickListener(click-> startActivity(nextActivity2));
+
+        Intent goToToolbar = new Intent(this, TestToolbar.class);
+        toolbarButton = findViewById(R.id.toolbarbtn);
+        toolbarButton.setOnClickListener( click -> startActivityForResult(goToToolbar, 1));
 
         Log.e(ACTIVITY_NAME, "In function: onCreate()");
     }
@@ -60,6 +64,10 @@ public class ProfileActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageButton.setImageBitmap(imageBitmap);
+        }
+        // when coming back from TestToolbar Activity
+        if (resultCode == 500) {
+            finish();
         }
         Log.e(ACTIVITY_NAME, "In function: onActivityResult()");
     }

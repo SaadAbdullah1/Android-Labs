@@ -33,6 +33,18 @@
     <string name="fragid">ID=</string>
     <string name="fragMsgSend">Is a Send Message</string>
     <string name="fragHide">HIDE</string>
+    <string name="toolbarbutton">Go To Toolbar Page</string>
     <string name="todo">TODO</string>
+    <string name="overflowmenu">overflow</string>
+    <string name="anotheractivity">Go to another activity</string>
+    <string name="chat_page">Chat Page</string>
+    <string name="weather_forecast">Weather Forecast</string>
+    <string name="go_back_to_login">Go back to login</string>
+    <string name="mastercard">mastercard</string>
+    <string name="amex">amex</string>
+    <string name="btc">btc</string>
+    <string name="globe">globe</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 
 </resources>
